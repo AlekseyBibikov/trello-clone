@@ -2,8 +2,9 @@ body {
     margin: 0;
     /* background-image: url('https://source.unsplash.com/random'); */
     /* background-image: url('https://source.unsplash.com/featured?island'); */
-    background-image: url('https://source.unsplash.com/1600x900/?background');
-    background-size: cover;
+    /* background-image: url('https://source.unsplash.com/1600x900/?background'); */
+	background-color:purple;
+	background-size: cover;
     background-position: center;
     font-family: 'Noto Sans', sans-serif;
 }
