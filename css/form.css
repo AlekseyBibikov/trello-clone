@@ -1,0 +1,50 @@
+.container_form{
+	background-color:rgb(248 248 248 / 80%);
+	width:300px;
+	text-align:center;
+	display:block;
+	margin:0 auto;
+	padding:10px 0;
+	position:relative;
+}
+.hfont{
+	margin-top:15px;
+	font-size:15px;
+	font-weight:bold;
+}
+input {
+	width:250px;
+	margin:10px 0;
+}
+button{
+	color:white;
+	background-color:purple;
+	font-weight:bold;
+	border-radius:8px;
+	padding:5px;
+	cursor:pointer;
+}
+#check{
+	width:17px;
+	position:absolute;
+	right:28px;
+	bottom:43px;
+}
+.checkoff{
+	position:absolute;
+	font-size:18px;
+	font-weight:bold;
+	color:red;
+	display:none;
+	right:6px;
+	bottom:47px;
+}
+.checkon{
+	position:absolute;
+	font-size:18px;
+	font-weight:bold;
+	color:green;
+	display:none;
+	right:6px;
+	bottom:47px;
+}
