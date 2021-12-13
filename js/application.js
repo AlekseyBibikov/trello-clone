@@ -38,11 +38,50 @@ const Application = {
 		
 		localStorage.setItem("trello", json)
 		
+let i = 5;
+let str_j = json;
+		while (i){
+			str_j = str_j.replace("[", "/");
+		i--;
+		}
+		const request = new XMLHttpRequest();
+		request.open("GET", "../config/json-check.php?"+str_j, true);
+		request.setRequestHeader("Content-type", "application/x-www-form-url");
+		request.addEventListener("readystatechange", () => {
+			if (request.readyState === 4 && request.status === 200){
+			console.log(request.responseText);
+			}
+		});
+		request.send();
+		
+		// const request = new XMLHttpRequest();
+		// request.responseType = "json";
+		// request.open("POST", "../config/json-lib.php", true);
+		// request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		// request.addEventListener("readystatechange", () =>{
+			// if (request.readyState === 4 && request.status === 200){
+				// console.log (request.response);
+			// }
+		// });
+		// request.send(json);
+		// console.log(json);
 	},
 	
 	load() {
 		if (!localStorage.getItem("trello")){
-			Application.save();
+			const request = new XMLHttpRequest();
+			request.open("GET", "../config/json-check.php?get", true);
+			request.setRequestHeader("Content-type", "application/x-www-form-url");
+			request.addEventListener("readystatechange", () => {
+				if (request.readyState === 4 && request.status === 200){
+					const str_j = request.responseText;
+					const obj = JSON.parse(str_j);
+					console.log(str_j);
+					localStorage.setItem("trello", JSON.stringify(obj));
+				}
+			});
+			request.send();
+		
 			Application.load();
 			return
 		}

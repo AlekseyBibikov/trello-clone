@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		header("Location: trello-clone.html");
 	}else {
 		
-		echo "Не верный логин или пароль!";
+		echo "Неверный логин или пароль!";
 	}
 	
 }
@@ -18,7 +18,7 @@ if (isset($_COOKIE['trello-clone'])&&(isset($_SESSION['login']))&&(isset($_SESSI
 						<input type='email' name='login' placeholder='Введите логин' required>
 						<input id='password' type='password' name='password' placeholder='Введите пароль' required>
 						<button type='submit' >Войти</button>
-					</form>
+				</form>
 			</body>";
 			
 	}else{		

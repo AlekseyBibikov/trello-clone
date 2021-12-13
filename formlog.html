@@ -12,43 +12,13 @@
 	<body>
 		<div class="container">
 			<div class="container_form">
-			<span class="hfont">Регистрация</span>
-				<form action="./config/send.php" method="POST">
-					<input type="text" name="user_name" placeholder="Введите имя" required>
+			<span class="hfont">ВХОД</span>
+				<form action="./config/log-check.php" method="POST">
 					<input type="email" name="email" placeholder="Введите электронную почту" required>
 					<input id="password" type="password" name="password" placeholder="Введите пароль" required>
-					<input id="pasput" type="password" name="check_password" placeholder="Повторите пароль" required>
-					<input id="check" type="checkbox" required>
-					<button type="submit" >Зарегистрировать</button>
+					<button type="submit" >Войти</button>
 				</form>
-				<!-- С начало сделал отдельный блок сбуковками при проверки ввода пароля но потом нашел способ лучше и заменил его checkbox. Такой способ не дает пользователь нажать на BUTTON пока checkbox не будет true.  -->
-				<!-- <div class="checkoff">X</div> -->
-				<!-- <div class="checkon">V</div> -->
 			</div>
 		</div>
-		<script>
-			document.querySelectorAll('input').forEach(x=>x.addEventListener(
-				"input",
-				checkFun
-			))
-			function checkFun(even){
-				let pass = document.querySelector("#password").value;
-				let passcheck = document.querySelector("#pasput").value;
-				let check = document.querySelectorAll("input")[4];
-				if ((pass === "")||(passcheck === "")){				
-					<!-- document.querySelector('.checkon').style.display = "none"; -->
-					<!-- document.querySelector('.checkoff').style.display = "none"; -->
-					check.checked = false;
-				}else if(pass === passcheck){
-					<!-- document.querySelector('.checkon').style.display = "block"; -->
-					<!-- document.querySelector('.checkoff').style.display = "none";			 -->
-					check.checked = true;
-				}else{
-					<!-- document.querySelector('.checkon').style.display = "none"; -->
-					<!-- document.querySelector('.checkoff').style.display = "block";			 -->
-					check.checked = false;
-				}
-			}
-		</script>
 	</body>
 </html>

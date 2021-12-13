@@ -28,7 +28,7 @@ button{
 	width:17px;
 	position:absolute;
 	right:28px;
-	bottom:43px;
+	margin-top:14px;
 }
 .checkoff{
 	position:absolute;
@@ -47,4 +47,12 @@ button{
 	display:none;
 	right:6px;
 	bottom:47px;
+}
+form  a{
+	display:block;
+	color:#0400ed;
+	font-family:sans-serif;
+	font-size:11px;
+	margin-top:3px;
+	padding:2px;
 }
