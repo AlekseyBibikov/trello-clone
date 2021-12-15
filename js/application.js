@@ -79,9 +79,15 @@ let str_j = json;
 			request.addEventListener("readystatechange", () => {
 				if (request.readyState === 4 && request.status === 200){
 					const str_j = request.responseText;
+					if (str_j.search(" no ")){
+						Application.save();
+						Application.load();
+					}else{
+					console.log(str_j);
 					const obj = JSON.parse(str_j);
 					localStorage.setItem("trello", JSON.stringify(obj));
 					Application.load();
+					}
 				}
 			});
 			request.send();

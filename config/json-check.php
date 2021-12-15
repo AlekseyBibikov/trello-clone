@@ -5,8 +5,14 @@ session_start();
 $array = $_GET;
 foreach($array as $key => $value){
 	if($key === "get"){
+		if (include "./json-lib/{$_SESSION['login']}.json"){
 		$str_j = file_get_contents("./json-lib/{$_SESSION['login']}.json");
 		echo $str_j;
+		}
+		else{
+			echo "no";
+		}
+		
 	}
 	else{
 		print_r($key);
