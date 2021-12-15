@@ -145,5 +145,5 @@ class Note {
 		}
 	}
 }
-Note.idCounter = 8;
+Note.idCounter = 4;
 Note.dragNote = null;

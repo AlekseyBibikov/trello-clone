@@ -73,4 +73,4 @@ class Column {
 		}
 	}
 }
-Column.idCounter=4;
+Column.idCounter=3;
