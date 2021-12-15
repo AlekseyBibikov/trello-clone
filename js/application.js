@@ -40,8 +40,12 @@ const Application = {
 		
 let i = 5;
 let str_j = json;
-		while (i){
-			str_j = str_j.replace("[", "/");
+		while (i){			
+			str_j = str_j.replace("#", "%grid;");
+			str_j = str_j.replace("[", "%bracket;");
+			str_j = str_j.replace(".", "%point;");
+			str_j = str_j.replace("_", "%underline;");
+			str_j = str_j.replace("&", "%ampersand;");
 		i--;
 		}
 		const request = new XMLHttpRequest();
@@ -76,13 +80,12 @@ let str_j = json;
 				if (request.readyState === 4 && request.status === 200){
 					const str_j = request.responseText;
 					const obj = JSON.parse(str_j);
-					console.log(str_j);
 					localStorage.setItem("trello", JSON.stringify(obj));
+					Application.load();
 				}
 			});
 			request.send();
-		
-			Application.load();
+
 			return
 		}
 		const mountePoint = document.querySelector('.columns')

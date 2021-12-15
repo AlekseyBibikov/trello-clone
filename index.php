@@ -17,13 +17,15 @@ if (isset($_COOKIE['trello-clone'])&&(isset($_SESSION['login']))&&(isset($_SESSI
 				<form action='index.php' method='POST'>
 						<input type='email' name='login' placeholder='Введите логин' required>
 						<input id='password' type='password' name='password' placeholder='Введите пароль' required>
-						<button type='submit' >Войти</button>
+						<button type='submit' >Войти</button>						
 				</form>
-			</body>";
+				<a href='./formlog.html'>я не ${_COOKIE['trello-clone']}</a>
+				<a href='./form.html'>создать новый аккаунт</a>
+
+		</body>";
 			
 	}else{		
 		readfile('form.html');
-		
 	}
 
 
