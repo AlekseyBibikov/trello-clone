@@ -79,7 +79,9 @@ let str_j = json;
 			request.addEventListener("readystatechange", () => {
 				if (request.readyState === 4 && request.status === 200){
 					const str_j = request.responseText;
-					if (str_j.search(" no ")){
+					console.log(str_j.search(/(\bWarning.*)(\bfile_get_content.*)(\/json-lib\/)/))
+					console.log(str_j);
+					if ((str_j.search(/(\bWarning.*)(\bfile_get_content.*)(\/json-lib\/)/) !== -1)){
 						Application.save();
 						Application.load();
 					}else{

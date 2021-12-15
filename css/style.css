@@ -133,6 +133,7 @@ body {
 	opacity: 0.4;
 }
 .delet{
+	color:#526a7a;
 	position: absolute;
 	text-align:center;
 	font-size:12px;
@@ -145,5 +146,5 @@ body {
 }
 .delet:hover {
 	border:1px solid rgb(82 106 122 / 30%);
-	
+	color:red;
 }
